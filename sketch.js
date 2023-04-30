@@ -20,7 +20,7 @@ function preload(){
 
 function setup(){
   
-  createCanvas(400,600);
+createCanvas(400,600);
 // Moving background
 path=createSprite(200,200);
 path.addImage(pathImg);
@@ -54,10 +54,10 @@ function draw() {
     path.y = height/2;
   }
   
-    createCash();
-    createDiamonds();
-    createjewelry();
-    createSword();
+    createCash(); // each 200 frame it will create Cash;200,400,600,800,1000,1200
+    createDiamonds();// each 320 frame it will create Diamndons,320,640,960,...
+    createjewelry();// each 410 frame it will create Jwellery,410,820,1230,...
+    createSword();// each 530 frame it will create Swords:530,1060,...
 
     if (cashG.isTouching(boy)) {
       cashG.destroyEach();
@@ -69,6 +69,7 @@ function draw() {
       
     }else if(jewelryG.isTouching(boy)) {
       jewelryG.destroyEach();
+      treasureCollection=treasureCollection+150;
 
       // treasureCollection=+ 150;
       // treasureCollection= 150;
@@ -80,9 +81,9 @@ function draw() {
         gameState=END;
         
         // boy.addAnimation(endImg);
-        // boy.addAnimation("SahilRunning",endImg);
+        boy.addAnimation("SahilRunning",endImg);
         // boy.addAnimation("SahilRunning");
-        // boy.addAnimation(SahilRunning,endImg);
+        //boy.addAnimation(SahilRunning,endImg);
 
         boy.x=200;
         boy.y=300;
@@ -98,10 +99,10 @@ function draw() {
         // jewelryG.destroy();
         // swordGroup.destroy();
         
-        // cashG.destroyEach();
-        // diamondsG.destroyEach();
-        // jewelryG.destroyEach();
-        // swordGroup.destroyEach();
+        cashG.destroyEach();
+        diamondsG.destroyEach();
+        jewelryG.destroyEach();
+        swordGroup.destroyEach();
         
         // cashGdestroyEach();
         // diamondsGdestroyEach();
